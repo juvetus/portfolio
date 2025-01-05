@@ -1,0 +1,467 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+.profile-picture {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #333; /* Optionnel : pour ajouter une bordure */
+}
+#about {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 800px; /* Optionnel : pour limiter la largeur de la section */
+    font-family: 'Roboto', sans-serif;
+    opacity: 0; /* Initialement caché */
+    transform: translateX(-100px); /* Initialement décalé */
+}
+#about h2 {
+    margin-bottom: 10px;
+    animation: slideIn 2s ease-in-out;
+    background: linear-gradient(90deg, #61ffef, #8bc9ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#about p {
+    margin-bottom: 20px;
+    animation: slideIn 2s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-100px) rotate(-10deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) rotate(0);
+    }
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+header h1 {
+    margin: 0;
+    flex: 1;
+    text-align: left;
+}
+
+.profile-picture {
+    text-align: right;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+#menu-toggle {
+    display: none; /* Masquer le bouton par défaut */
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+/* Styles pour le menu de navigation */
+#nav-menu {
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    #menu-toggle {
+        display: block; /* Afficher le bouton sur les petits écrans */
+    }
+
+    #nav-menu {
+        display: none; /* Masquer le menu par défaut sur les petits écrans */
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #nav-menu.active {
+        display: flex; /* Afficher le menu lorsqu'il est actif */
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+/* Styles pour la section des projets */
+#projects h2 {
+    text-align: center;
+}
+
+.filter-buttons {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.filter-buttons button {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    margin: 0 5px;
+}
+
+.filter-buttons button:hover {
+    background: #555;
+}
+
+/* Styles pour le lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+section {
+    margin: 20px 0;
+}
+
+h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.project:hover {
+    transform: translateY(-10px);
+}
+
+.project img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+#projects h2 {
+    text-align: center;
+}
+
+.project h3 {
+    margin-bottom: 10px;
+}
+
+.project a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.project a:hover {
+    text-decoration: underline;
+}
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-buttons button {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    flex: 1 1 calc(33.333% - 20px); /* Ajuste la largeur des boutons */
+    max-width: 200px; /* Largeur maximale des boutons */
+}
+
+.filter-buttons button:hover {
+    background: #555;
+}
+
+@media (max-width: 768px) {
+    .filter-buttons button {
+        flex: 1 1 calc(50% - 20px); /* Ajuste la largeur des boutons pour les petits écrans */
+    }
+}
+
+@media (max-width: 480px) {
+    .filter-buttons button {
+        flex: 1 1 100%; /* Les boutons prennent toute la largeur sur les très petits écrans */
+    }
+}
+
+#certifications {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#certifications h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.certification {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: left;
+}
+
+.certification:hover {
+    transform: translateY(-10px);
+}
+
+.certification h3 {
+    margin-bottom: 10px;
+}
+
+.certification p {
+    margin-bottom: 10px;
+}
+
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #0056b3;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    display: none;
+}
+
+.success-message {
+    color: green;
+    font-size: 1em;
+    display: none;
+}
+#contact {
+    padding: 20px;
+}
+
+#contact h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+#contact-form {
+    flex: 1 1 300px; /* Permet au formulaire de s'adapter à l'espace disponible */
+    min-width: 300px; /* Largeur minimale pour le formulaire */
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info {
+    flex: 1 1 300px; /* Permet à la section contact-info de s'adapter à l'espace disponible */
+    min-width: 300px; /* Largeur minimale pour la section contact-info */
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h3 {
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+}
+
+.contact-info a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    display: none;
+}
+
+.success-message {
+    color: green;
+    font-size: 1em;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+
+    #contact-form, .contact-info {
+        min-width: 100%; /* Assure que les éléments prennent toute la largeur disponible sur les petits écrans */
+    }
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: #333;
+    color: #fff;
+    margin-top: 20px;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background: #f0f0f0; /* Couleur de fond unie */
+    color: #333;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .project, form {
+        padding: 10px;
+    }
+}

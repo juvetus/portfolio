@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Portfolio</h1>
+            <div class="profile-picture">
+                <img src="images/juvet-image.jpg" alt="Photo de moi">
+            </div>
+        </div>
+        <button id="menu-toggle" onclick="toggleMenu()">Menu</button>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="about">
+        <h2>À propos de moi</h2>
+        <p>Ingénieur développeur C# .NET et SQL passionné...</p>
+    </section>
+    <section id="projects">
+        <h2>Mes Projets</h2>
+        <div class="filter-buttons">
+            <button onclick="filterProjects('all')">Tous</button>
+            <button onclick="filterProjects('category1')">project 1</button>
+            <button onclick="filterProjects('category2')">project 2</button>
+            <button onclick="filterProjects('category3')">project 3</button>
+            <button onclick="filterProjects('category4')">project 4</button>
+            <button onclick="filterProjects('category5')">project 5</button>
+            <button onclick="filterProjects('category6')">project 6</button>
+        </div>
+        <div class="projects-grid">
+            <div class="project" data-category="category1">
+                <img src="images/dotNET.png" alt="Projet 1" onclick="openLightbox(this)">
+                <h3>Projet 1</h3>
+                <p>Description du projet 1...</p>
+                <a href="https://github.com/votre-projet1" target="_blank">Voir sur GitHub</a>
+            </div>
+            <div class="project" data-category="category2">
+                <img src="images/Azure_Dev_Ops.png" alt="Projet 2" onclick="openLightbox(this)">
+                <h3>Projet 2</h3>
+                <p>Description du projet 2...</p>
+                <a href="https://github.com/votre-projet2" target="_blank">Voir sur GitHub</a>
+            </div>
+            <!-- Ajoutez d'autres projets ici -->
+            <div class="project" data-category="category3">
+                <img src="images/Js.png" alt="Projet 3"  onclick="openLightbox(this)">
+                <h3>Projet 3</h3>
+                <p>Description du projet 3...</p>
+                <a href="https://github.com/votre-projet3" target="_blank">Voir sur GitHub</a>
+            </div>
+            <div class="project" data-category="category4">
+                <img src="images/Js.png" alt="Projet 4"  onclick="openLightbox(this)">
+                <h3>Projet 4</h3>
+                <p>Description du projet 4...</p>
+                <a href="https://github.com/votre-projet4" target="_blank">Voir sur GitHub</a>
+            </div>
+            <div class="project" data-category="category5">
+                <img src="images/sql.jpg" alt="Projet 5"  onclick="openLightbox(this)">
+                <h3>Projet 5</h3>
+                <p>Description du projet 5...</p>
+                <a href="https://github.com/votre-projet5" target="_blank">Voir sur GitHub</a>
+            </div>
+            <div class="project" data-category="category6">
+                <img src="images/SQL-Server-2022.png" alt="Projet 6"  onclick="openLightbox(this)">
+                <h3>Projet 6</h3>
+                <p>Description du projet 6...</p>
+                <a href="https://github.com/votre-projet6" target="_blank">Voir sur GitHub</a>
+            </div>
+        </div>
+    </section>
+    <section id="certifications">
+        <h2>Diplômes et Certifications</h2>
+        <div class="certifications-grid">
+            <div class="certification">
+                <h3>Diplôme 1</h3>
+                <p>Description du diplôme 1...</p>
+            </div>
+            <div class="certification">
+                <h3>Certification 1</h3>
+                <p>Description de la certification 1...</p>
+            </div>
+            <div class="certification">
+                <h3>Diplôme 2</h3>
+                <p>Description du diplôme 2...</p>
+            </div>
+            <div class="certification">
+                <h3>Certification 2</h3>
+                <p>Description de la certification 2...</p>
+            </div>
+            <div class="certification">
+                <h3>Diplôme 2</h3>
+                <p>Description du diplôme 2...</p>
+            </div>
+            <div class="certification">
+                <h3>Certification 2</h3>
+                <p>Description de la certification 2...</p>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <h2>Contactez-moi</h2>
+        <div class="contact-container">
+            <form id="contact-form">
+                <label for="name">Nom:</label>
+                <input type="text" id="name" name="name" required>
+                <span class="error-message" id="name-error"></span>
+    
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <span class="error-message" id="email-error"></span>
+    
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <span class="error-message" id="message-error"></span>
+    
+                <button type="submit">Envoyer</button>
+                <span class="success-message" id="success-message"></span>
+            </form>
+            <div class="contact-info">
+                <h3>Informations de contact</h3>
+                <p><strong>Adresse:</strong> 2 rue de Gresswiller, Strasbourg, France</p>
+                <p><strong>Téléphone:</strong> +33782510546</p>
+                <p><strong>Email:</strong> exemple@domaine.com</p>
+                <h3>Suivez-moi</h3>
+                <p>
+                    <a href="https://www.linkedin.com/in/votreprofil" target="_blank">LinkedIn</a><br>
+                    <a href="https://twitter.com/votreprofil" target="_blank">Twitter</a><br>
+                    <a href="https://github.com/votreprofil" target="_blank">GitHub</a>
+                    
+                   
+                </p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 Juvet TAJO Portfolio</p>
+    </footer>
+    <div id="lightbox" class="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
